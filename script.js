@@ -296,14 +296,6 @@ scheduleAnimation();
                 medium: "pen on paper"
             },
             {
-                imageSrc: "resources/canvas/canvas_10.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
                 imageSrc: "resources/canvas/canvas_11.webp",
                 altText: "painting_1",
                 title: "c#1",
