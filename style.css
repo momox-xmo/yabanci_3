@@ -1,5 +1,7 @@
 
 *{  
+    margin: 0;
+    padding: 0;
     box-sizing:border-box;
     color: #000000;
     /* border: 0.4px solid red; */
@@ -15,7 +17,7 @@ html, body{
     flex-direction: column;
     margin: 0px;
     font-size: 18px;
-    /* font-size: 16px; */
+    overflow-y: scroll;
 }
 
 body.no-scroll {
@@ -47,8 +49,6 @@ h2{
 p {
     font-size: 12pt;
     font-weight: 400;
-    
-
 }
 
 
@@ -58,48 +58,71 @@ p {
 
 
 
-
 #header{
     position: sticky;
     top: 0;
-    /* filter: drop-shadow(0 0 0.2rem rgb(255, 245, 238)); */
-    /* filter: invert(); */
-    /* opacity: 20%; */
-    z-index: 100;
-
+    z-index: 99;
 }
 
 header {
     width: 100%;
     background-color: white;
-    backdrop-filter: blur(10px);
-    z-index: 999;
+
 }
 
 .nav{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1rem 20rem;
+    justify-content: space-between; 
     align-items: center;
-    text-align:center;
     padding: 0 0;
     margin: 0 auto;
     max-width: 1200px;
-    height: 4rem;
+    padding-inline: 1rem;
+    height: 3.3rem;
+    /* border: 0.4px solid rgb(150, 240, 33); */
 }
 
-.logo {
+#yab_logo{
+    display: flex;
+    width: 10rem;
+    /* border: 0.4px solid rgb(192, 33, 240) */
+    /* height: 2.2rem; */
+}
+
+ #wall, #canvas, #mp4, #publish {
     display: block;
-    width: 9rem;
-    /* border: 0.4px solid rgb(192, 33, 240); */
-}
+    width: auto; /* Adjust width as needed */
+    height: 1.8rem; 
+    /* border: 0.4px solid rgb(27, 255, 6); */
 
-.logo img {
-    height: 3rem;
+  }
 
-}
-.logo video {
-    height: 2rem;
-}
+
+
+
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    /* align-items: center; */
+    border: none; /* Remove the border on the menu container */
+    margin-left: auto; 
+  }
+  
+  .menu li {
+    list-style: none;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+  }
+
+
+  
+
+
 
 .logo_small{
     display: none;
@@ -108,42 +131,18 @@ header {
 .hamburger{
     display: none;
     cursor: pointer;
-    z-index: 1001;
-}
-
-.hamburger img{
-    width:50px;
-    width: 25px;
-}
-
-.menu {
-    position: relative;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    padding-inline: 1rem;
+    z-index:99999;
 }
 
 
-a{
-    text-decoration: none;
-}
 
-li {
-    list-style: none;
-}
+/*  */
 
 #mp4:hover{
-    filter: blur(2px);
+    filter: blur(6px);
     animation-duration: 4s;    
 }
 
-
-.menu li{       
-    margin-top: 0.4rem;
-    height: 1.4rem;
-}
 
 .logo:hover {
     animation: flicker 0.1s infinite;
@@ -170,7 +169,7 @@ li {
     font-size: 0.8rem;
     color: rgb(87, 87, 87);
     text-align: center;
-    margin-top: rem;
+    margin-top: 0 rem;
 
     padding-bottom: 1rem;
 }
@@ -181,6 +180,7 @@ footer div{
 
 footer div a{   
     font-weight: 500;  
+    text-decoration: none;
 }
     
 footer div a:hover{
@@ -207,8 +207,10 @@ gap: 8rem;
 .content_box{
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
-gap: 0.5rem;
+gap: rem;
 padding: 0.1rem;
+margin-bottom: 4rem;
+gap: 1rem;
 /* border: 1px solid rgb(244, 255, 32);     */
 }
 .content_img {  
@@ -248,6 +250,9 @@ padding: 0.1rem;
 
 
 /* VIDEO CARD */
+body {
+    overflow-x: hidden;
+  }
 .video_container{
     width: 100%;
     background-color: black;
@@ -260,9 +265,10 @@ padding: 0.1rem;
 }
 .video{
     margin-inline: auto;   
-    border-radius: 2rem;
+    /* border: 0.4px solid red; */
 }
 .video video{
+    padding-inline: 1rem;
     width: 100%;    
     max-width: 1200px;
 }
@@ -270,6 +276,7 @@ padding: 0.1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-inline: 1rem;
 }
 .video_id p{
     color: white; 
@@ -279,77 +286,151 @@ padding: 0.1rem;
 
 
 
-@media (max-width:10px){
+@media (max-width:600px){
 
-    #header{
-    filter: none;
+
+
+    .nav{
+    display: flex;
+    height: 2.4rem;
+    padding: 1rem;
     }
 
-    #menu {
-
-    background-color: #ffffff;
-        
-    }
 
     .menu {
-        
-        display: none;
-        position: fixed;
-        padding: 0;
-        margin: 0;
-        z-index: 1000;
+    display: flex;
+    z-index: 9999;
     }
 
-    .hamburger{
-        display: block;
+    .video_container{
+    padding-inline: 0rem;
+    padding-top: 2rem;
+
     }
+
+    body.active #menu{
     
-    .menu.active{
-        display: flex;
-        
+    display: flex;
+    flex-direction: column;
+    
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%
 
-    }
-    .logo{
-        display: block;
+    
+    /* border: 2px solid red; */
+
+    /* z-index: 999999; */
     }
 
-    .logo img{
-        height: 2rem;
-    }
-    .logo_small{
+    .menu_container {
     display: none;
+    background-color: #ffffff;
+
+    /* position: relative; */
     }
+
+    body.active .menu_container {
+        display: flex;
+        position:fixed;
+        width:100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+
+    }
+
+    body.active .menu{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        gap: 2rem;
+
+        /* border: 2px solid red; */
+
+    }
+
+    body.active li {
+        /* border: 2px solid   orange; */
+        padding-bottom: 2rem;
+
+    }
+
+    #yab_logo{
+        width: 7rem;
+        padding-bottom: 0.3rem;
+
+    }
+    body.active #yab_logo{
+        /* display: none; */
+
+
+    }
+
+    #hamburger{
+        display: block;
+        width: 3rem;
+
+        -webkit-tap-highlight-color: transparent;  /* Removes tap highlight on iOS */
+        -webkit-touch-callout: none;  /* Prevents callout menu on long press */
+        user-select: none;  /* Prevents text selection */
+        -webkit-user-select: none;  /* For Safari */
+        touch-action: manipulation;  /* Optimizes touch behavior */
+        /* touch-action:auto;  Optimizes touch behavior */
+
+    }
+   
+
+
+  
+
+
+
+
 
     .box_container{
-        display: flex;
-        flex-direction: column-reverse;
-        gap: 1rem;
-        margin-block: 1rem ;
-        /* min-height: 100vh; */
-        width: 100vw;
-
-        padding: z;
-
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 1rem;
     }
+
     .content_box{
-        
-        border: 1px solid ;
+        margin-top: 0;
         display: flex;
         flex-direction: column;
-        /* flex-direction: column; */
+        /* padding: 1rem; */
     }
 
-    .content_img img {
+    .content_img {
         width: 100vw;
+        padding-inline: 1rem;
+        /* border: 1px solid rgb(0, 255, 115); */
+    }
+
+    .content_img {
+        width: 100%;
     }
 
     .description {
+        padding-inline: 1rem;
         font-size: 12px;
         line-height: 1rem;
         display: flex;
+        /* border: 1px solid blue; */
+
     }
 
+    .description :first-child {
+        /* border: 1px solid blue; */
+        margin-left: 0;
+    }
+
+
+
    .description h2{
+    font-weight: 600;
     font-size: 12px;
 
    }
@@ -357,79 +438,224 @@ padding: 0.1rem;
     font-size: 12px;
 
    }
+   .description{
+    align-self: end;
+    color: black;
+    width: 100%;
+    /* border: 0.4px solid red; */
+    }
+    .description h2, .description p {
+    margin: 0rem auto;
+}
 
+#footer{
+    z-index: 99999;
+    bottom: 0.5rem;
+}
+
+
+
+
+
+
+
+.lost div h1{
+    font-size: 6rem;
+    font-weight: 600;
+    margin-bottom:  3rem;
+
+}
+
+.lost div p{
+    margin-bottom: 20%;
+    width: 70%;
+    text-align: center;
+    margin-inline: auto;
+
+}
+
+.lost #dog img{
+    width: 60vw;
+
+}
+
+
+
+.main_lost {
+    width: 100%;
+    border: 2px solid orange;
+    display: flex;
+
+}
+
+#dog img{
+
+    /* max-width: auto; 
+    /* width: 2rem; */
+}
 
 
 }
+
+
+
 
 
 
 /* 404 */
+
+
 .lost{
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
+
+
 }
-.lost div:first-child{
-    margin-bottom: -4rem;
-}
-.lost div:nth-child(2){
-    margin-bottom: 4rem;
-}
+
+
 .lost p{
     font-size: 1rem;
+    margin-bottom: 7rem;
 }
+
+#dog img{
+    width: 20rem;
+    height: auto;
+}
+
+
+
+
+.lost h1 {
+    font-weight: 600;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0rem;
+    font-size: 2rem; 
+}
+
+.lost p {
+    font-size: 1rem;
+    margin-bottom: 7rem;
+    font-size: 0.8rem;
+}
+
 .lost p a{
     color: #FC0FC0;
 }
-.lost h1{
-    font-size:10rem;
-    font-weight: 600;
+
+#dog img {
+    /* width: 10rem; */
+    height: auto;
 }
-#dog video{
-    width: 20rem;
-}
+
 
 
 
 /* BUG */
 #bug{
-    width: 100%;
+    display: none;
+
+    width: 80%;
     top: 0;
-    /* border: 2px solid black; */
     position:fixed ;
-    z-index: 2000;
-
-    left: -70px;
+    z-index: 99999;
+    left: -8rem;
+    pointer-events: none;  
+    mix-blend-mode: multiply; 
     }
-#bug video{
+#bug img{
     width: 100%;
-    max-width: 1000px;    
-    /* top: 0px; */
+    max-width: 1000px;
 
-    /* border: 2px solid black; */
     
 }
 #bug {
-    pointer-events: none;
+    
+}
+
+.lost div h1{
+    font-size:8rem;
+    font-weight: 600;
+    margin-bottom:  4rem;
+
 }
 
 
 /* LOADER */
 .loader_wrapper {
+    display: flex;
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     background-color: white;
-    z-index: 200;
-    align-content: center;
-    justify-items: center;
+    z-index: 999;
+
 }
 .loader{
-    color:black;
+    display: flex;
+    margin-inline: auto;
+}   
+
+.loader img{
+    width:4rem;
+    height: auto;
+    align-self: center;
+    justify-self: center;
+}
+
+#style_png {
+    width: 100%;
+    
+
+}
+
+
+#hamburger{
+    
+    /* display: flexbox; */
+
+}
+
+
+.smoker {
+
+    position: relative;
+    margin-top: 5vh;
+    height: 60vh;
+    width: auto;
+    /* min-width: 40rem; */
+    border: 2px solid #FC0FC0;
+    left: -3rem;
+    /* display: flex; */
+}
+
+
+#smoker  {
+    height: 100%;
+    /* width: 100%; */
+
+
+}
+
+
+#eye_socket_1{
+    position: relative;
+    border: 1px solid red;
+
+    height: 3.1%;
+    width: 7.2%;
+
+    bottom: 74.5%;
+    left: 18%;
+
+    border-radius: 60%;
+    transform: rotate(-27deg);
 }
 
 
@@ -437,3 +663,14 @@ padding: 0.1rem;
 
 
 
+
+#eye_socket_2{
+    position: relative;
+    border: 1px solid red;
+    height: 2.5%;
+    width: 6.5%;   
+    top: -88%;
+    left: 38%;
+    border-radius: 50%;
+    transform: rotate(-22deg);
+}
