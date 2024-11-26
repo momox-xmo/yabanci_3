@@ -623,54 +623,94 @@ body {
 }
 
 
+
+
+
 .smoker {
-
-    position: relative;
-    margin-top: 5vh;
-    height: 60vh;
+    position: absolute;  
+    margin-top: 20vh;
+    height: 50vh;
     width: auto;
-    /* min-width: 40rem; */
-    border: 2px solid #FC0FC0;
-    left: -3rem;
-    /* display: flex; */
+    left: -4rem;
+    justify-content: center;
+    align-items: center;
+    /* transform-origin: center center;  */
 }
 
 
-#smoker  {
-    height: 100%;
-    /* width: 100%; */
 
 
+.smoker_image{
+    /* position: absolute; */
+    /* z-index: 100;    */
 }
+
+.smoker_image img{
+
+    width: 80%; 
+    /* height: 30rem;    */
+}
+
+
+
 
 
 #eye_socket_1{
-    position: relative;
-    border: 1px solid red;
+    position: absolute;
+    /* border: 0.1px solid red; */
 
     height: 3.1%;
     width: 7.2%;
 
-    bottom: 74.5%;
+    bottom: 66%;
     left: 18%;
-
     border-radius: 60%;
     transform: rotate(-27deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-
-
 
 
 
 
 #eye_socket_2{
-    position: relative;
-    border: 1px solid red;
+    position: absolute;
+    /* border: 0.1px solid red; */
     height: 2.5%;
     width: 6.5%;   
-    top: -88%;
+    bottom: 79%;
     left: 38%;
     border-radius: 50%;
     transform: rotate(-22deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+#eye_1, #eye_2 {
+    display: none;
+    position: relative;
+    z-index: -1; 
+    width:40%;
+    height: auto;
+}
+
+#eye_1 img, #eye_2 img {
+    z-index: -1; 
+}
+
+
+
+.yabanci_info {
+    position: relative;
+    top: 7rem;
+    margin-left: 20rem;
+}
+
+.yabanci_info h1 { 
+    
 }

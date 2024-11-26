@@ -32,26 +32,41 @@
 
 <div class="main"> 
 
+    <!-- <div>Collection of works of Yabanci </div> -->
     
 <section class="wrapper container" class="landing_page">
 
         <!-- <div><img src="resources/main_page.png" alt="" style="height: 80vh;"></div> -->
 
+
+
         <div class="smoker">
-        <img src="resources/assets/smoker.png" alt="smoker_img" id="smoker">
+
+
+
+        <div class="smoker_image" ><img src="resources/assets/smoker.png" alt="smoker_img" id="smoker"></div>
             
         <div id="eye_socket_1">
-            
+            <img src="resources/assets/smoker_eye_1.png" alt="smoker_eye_1" id="eye_1">
         </div>
 
-        <div id="eye_socket_2"></div>
-    
+        <div id="eye_socket_2">
+            <img src="resources/assets/smoker_eye_2.png" alt="smoker_eye_2" id="eye_2" >
+        </div>
+           
+
+
         </div>  
     
     
-
-        <!-- <div>Collection of works from Yabanci</div>
-        <div>Send me a mail!</div> -->
+<div class="yabanci_info">
+    
+            <div><h1>Collection of works by Yabanci</h1></div>
+    
+            <div><a href="httpsyabanci@gmail.com">httpsyabanci@gmail.com</a></div>
+            <div><a href="https://www.instagram.com/yabanc.l/">ig/yabanc.l</a></div>
+</div>
+        <!-- <div style="position: fixed; left: 50vw; top: 12rem;"><a href="">Send an email!</a> or <a href="">dm</a></div> -->
         <!-- <div class="info">
             My name is Leon. I go by the name 'Yabancı' for my artworks. I have been drawing since I can remember and have been doing street art since 2015. In my artwork, I aim to depict the way I experience my emotions. These depictions mostly manifest as self-portraits of my inner disturbance. My work usually revolves around the topics of my own personal alienation from the human condition - something I believe everybody in this world shares on a deeper level, and the complexes that stem from fear. Hence the name Yabancı, which means 'outsider' or 'foreigner' in Turkish.
         </div> -->
@@ -59,6 +74,90 @@
         <!-- <div><img src="resources/index.gif" alt="dog_animation"></div> -->
         <!-- <div class="trial">momo</div> -->
 </section>
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const eyeConfigs = [
+        { 
+            eyeId: 'eye_1', 
+            socketId: 'eye_socket_1',
+            rotation: 0
+        },
+        { 
+            eyeId: 'eye_2', 
+            socketId: 'eye_socket_2',
+            rotation: 0
+        }
+    ];
+
+    // Control how far the pupil can move from the center
+    const movementFactor = 0.5;  // Adjust this value (0.0 - 1.0)
+
+    // Function to calculate the movement of the pupil inside the elliptical eye socket
+    function calculateEyeMovement(socketWidth, socketHeight, dx, dy) {
+        const a = socketWidth / 2;  // Semi-major axis (horizontal radius)
+        const b = socketHeight / 2; // Semi-minor axis (vertical radius)
+
+        // Normalize the cursor position based on the ellipse's radii
+        let normalizedX = dx / a;  // Normalize based on the horizontal radius
+        let normalizedY = dy / b;  // Normalize based on the vertical radius
+
+        // Calculate the squared distance from the center
+        const distanceSquared = normalizedX * normalizedX + normalizedY * normalizedY;
+
+        // If the distance exceeds 1 (outside the ellipse), we need to scale it down
+        if (distanceSquared > 1) {
+            const distance = Math.sqrt(distanceSquared);
+            normalizedX /= distance;
+            normalizedY /= distance;
+        }
+
+        // Apply the scaling factor to control how far the pupil moves
+        const constrainedX = normalizedX * a * movementFactor;
+        const constrainedY = normalizedY * b * movementFactor;
+
+        return { x: constrainedX, y: constrainedY };
+    }
+
+    function updateEyePosition(event) {
+        eyeConfigs.forEach(config => {
+            const eye = document.getElementById(config.eyeId);
+            const socket = document.getElementById(config.socketId);
+
+            if (!eye || !socket) return;
+
+            // Get the socket's bounding box (dimensions and position)
+            const socketRect = socket.getBoundingClientRect();
+            const socketCenterX = socketRect.left + socketRect.width / 2;
+            const socketCenterY = socketRect.top + socketRect.height / 2;
+
+            // Calculate the relative position of the cursor within the eye socket
+            const dx = event.clientX - socketCenterX;
+            const dy = event.clientY - socketCenterY;
+
+            // Get the constrained movement of the pupil based on the cursor position
+            const { x: constrainedOffsetX, y: constrainedOffsetY } = calculateEyeMovement(
+                socketRect.width,
+                socketRect.height,
+                dx,
+                dy
+            );
+
+            // Apply the calculated offset to move the pupil
+            eye.style.transform = `
+                rotate(${config.rotation}deg)
+                translate(${constrainedOffsetX}px, ${constrainedOffsetY}px)
+            `;
+        });
+    }
+
+    // Listen for the mousemove event to update the pupil position
+    document.addEventListener('mousemove', updateEyePosition);
+});
+
+</script>
 
 
 <div id="footer"></div>

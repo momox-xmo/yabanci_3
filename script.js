@@ -165,8 +165,8 @@
                 });        
                 });
         const MIN_DELAY = 2000;    
-        const MAX_DELAY = 6000;    
-        const MIN_INTERVAL = 2000; 
+        const MAX_DELAY = 40000;    
+        const MIN_INTERVAL = 20000; 
         // const FRAME_COUNT = 12;     
         // const FPS = 20;           
         const ANIMATION_DURATION = 600;
@@ -222,451 +222,422 @@ scheduleAnimation();
 
 
     //CONTENT   
-        const canvasPageData = [
-            {
-                imageSrc: "resources/canvas/canvas_1.webp",
-                altText: "painting_1",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_2.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_3.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_4.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_5.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_6.webp",
-                altText: "painting_1",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_7.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_8.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_9.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_11.webp",
-                altText: "painting_1",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_12.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_13.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_14.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_15.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_16.webp",
-                altText: "painting_1",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_17.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_18.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_19.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_20.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_21.webp",
-                altText: "painting_1",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_22.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_23.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_24.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_25.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_26.webp",
-                altText: "painting_1",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_27.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_28.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_29.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-            {
-                imageSrc: "resources/canvas/canvas_30.webp",
-                altText: "painting_2",
-                title: "c#1",
-                year: "2024",
-                dimensions: "50x70cm",
-                medium: "pen on paper"
-            },
-        ];
+    const canvasPageData = [
+    
+        {
+            imageSrc: "resources/canvas/canvas_2.webp",
+            altText: "painting_2",
+            title: "Untitled from DE series",  // Fixed curly quotes
+            year: "2024",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_3.webp",
+            altText: "painting_2",
+            title: "Rival dealer",  // Fixed curly quotes
+            year: "2017",
+            dimensions: "25x25",
+            medium: "Mixed media on canvas"
+        },
+        // {
+        //     imageSrc: "resources/canvas/canvas_4.webp",
+        //     altText: "painting_2",
+        //     title: "",
+        //     year: "2020",
+        //     dimensions: "",
+        //     medium: "pen on paper"
+        // },
+        {
+            imageSrc: "resources/canvas/canvas_5.webp",
+            altText: "painting_2",
+            title: "Untitled from DE series",
+            year: "2024",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_6.webp",
+            altText: "painting_1",
+            title: "Domino’s Pizza",  // Fixed curly quotes
+            year: "2017",
+            dimensions: "",
+            medium: "pen on tissue paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_7.webp",
+            altText: "painting_2",
+            title: "Untitled",
+            year: "2016",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_8.webp",
+            altText: "painting_2",
+            title: "Friend sleeping",  // Fixed curly quotes
+            year: "2019",
+            dimensions: "50x70cm",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_9.webp",
+            altText: "painting_2",
+            title: "Golem playing at Pixie",  // Fixed curly quotes
+            year: "2018",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_11.webp",
+            altText: "painting_1",
+            title: "",
+            year: "2020",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_12.webp",
+            altText: "painting_2",
+            title: "",
+            year: "2020",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_13.webp",
+            altText: "painting_2",
+            title: "Untitled from DE series",
+            year: "2024",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_14.webp",
+            altText: "painting_2",
+            title: "Kid in New Zealand guiding a cow",  // Fixed curly quotes
+            year: "2016",
+            dimensions: "A4",
+            medium: "pencil on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_15.webp",
+            altText: "painting_2",
+            title: "Cover art for Arco-Arco",  // Fixed curly quotes
+            year: "2019",
+            dimensions: "35x35cm",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_16.webp",
+            altText: "painting_1",
+            title: "",
+            year: "2017",
+            dimensions: "100x70cm",
+            medium: "pastel on canvas"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_17.webp",
+            altText: "painting_2",
+            title: "",
+            year: "2022",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_18.webp",
+            altText: "painting_2",
+            title: "hug.1",  // Fixed curly quotes
+            year: "2022",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_19.webp",
+            altText: "painting_2",
+            title: "Portrait of Tsutomu Nihei",  // Fixed curly quotes
+            year: "2020",
+            dimensions: "A4",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_20.webp",
+            altText: "painting_2",
+            title: "",
+            year: "2022",
+            dimensions: "50x70cm",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_21.webp",
+            altText: "painting_1",
+            title: "Portrait of Yue Minjun",  // Fixed curly quotes
+            year: "2016",
+            dimensions: "A4",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_22.webp",
+            altText: "painting_2",
+            title: "",
+            year: "2018",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_23.webp",
+            altText: "painting_2",
+            title: "drawing that I left on my grandmother's coffee table",  // Fixed curly quotes
+            year: "2022",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_24.webp",
+            altText: "painting_2",
+            title: "people sleeping on bus",  // Fixed curly quotes
+            year: "2016",
+            dimensions: "A4",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_25.webp",
+            altText: "painting_2",
+            title: "in between sleep",
+            year: "2016",
+            dimensions: "50x70cm",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_26.webp",
+            altText: "painting_1",
+            title: "",
+            year: "",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_27.webp",
+            altText: "painting_2",
+            title: "",
+            year: "2023",
+            dimensions: "50x70cm",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_28.webp",
+            altText: "painting_2",
+            title: "",
+            year: "",
+            dimensions: "",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_29.webp",
+            altText: "painting_2",
+            title: "depressed",     
+            year: "2016",
+            dimensions: "A4",
+            medium: "pen on paper"
+        },
+        {
+            imageSrc: "resources/canvas/canvas_30.webp",
+            altText: "painting_2",
+            title: "Hayal kurmak hala önemli",  
+            year: "2022",
+            dimensions: "50x70cm",
+            medium: "pen on paper"
+        },
+    ];
+    
+    const wallPageData = [
+        {
+            imageSrc: "resources/wall/wall_20.webp",
+            altText: "painting_1",
+            title: "",
+            date: "2024",
+            location: "Istanbul"
+        },
+        {
+            imageSrc: "resources/wall/wall_3.webp",
+            altText: "painting_1",
+            title: "",
+            date: "2021",
+            location: "Istanbul"
+        },
+        {
+            imageSrc: "resources/wall/wall_19.webp",
+            altText: "painting_1",
+            title: "",
+            date: "",
+            location: ""
+        },
+        {
+            imageSrc: "resources/wall/wall_1.webp",
+            altText: "painting_1",
+            title: "",
+            date: "2024",
+            location: "Istanbul"
+        },
+        {
+            imageSrc: "resources/wall/wall_2.webp",
+            altText: "painting_1",
+            title: "",
+            date: "2022",
+            location: "Izmir"
+        },
+        {
+            imageSrc: "resources/wall/wall_6.webp",
+            altText: "painting_1",
+            title: "",
+            date: "2024",
+            location: "Istanbul"
+        },
+    
+        {
+            imageSrc: "resources/wall/wall_13.webp",
+            altText: "painting_1",
+            title: "",
+            date: "",
+            location: ""
+        },
+        {
+            imageSrc: "resources/wall/wall_5.webp",
+            altText: "",
+            title: "",
+            date: "",
+            location: ""
+        },
+        {
+            imageSrc: "resources/wall/wall_7.webp",
+            altText: "painting_1",
+            title: "",
+            date: "",
+            location: ""
+        },
+        {
+            imageSrc: "resources/wall/wall_4.webp",
+            altText: "painting_1",
+            title: "16 faces",  // Fixed curly quotes
+            date: "2024",
+            location: "Istanbul"
+        },
+        {
+            imageSrc: "resources/wall/wall_9.webp",
+            altText: "painting_1",
+            title: "ribcage",
+            date: "2016",
+            location: "Boğaziçi Üniversitesi Sarıtepe Kampüsü"
+        },
+        {
+            imageSrc: "resources/wall/wall_10.webp",
+            altText: "painting_1",
+            title: "",
+            date: "2023",
+            location: "Istanbul"
+        },
+        {
+            imageSrc: "resources/wall/wall_11.webp",
+            altText: "painting_1",
+            title: "Gian Albert",  // Fixed curly quotes
+            date: "2018",
+            location: "Milan"
+        },
         
-        const wallPageData = [
-            {
-                imageSrc: "resources/wall/wall_20.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_3.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_1.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_2.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_6.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_4.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_5.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_7.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_8.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_9.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_10.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_11.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_12.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_13.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_14.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_15.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_16.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_17.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_18.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_19.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-            {
-                imageSrc: "resources/wall/wall_21.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-        
-            {
-                imageSrc: "resources/wall/wall_22.webp",
-                altText: "painting_1",
-                title: "w#1",
-                date: "2023",
-                location: "Istanbul"
-            },
-        
+       
+        {
+            imageSrc: "resources/wall/wall_14.webp",
+            altText: "painting_1",
+            title: "",
+            date: "2021",
+            location: "Marmaris"
+        },
+        {
+            imageSrc: "resources/wall/wall_15.webp",
+            altText: "painting_1",
+            title: "Sleep (Mascara on wall)",  // Fixed curly quotes
+            date: "2024",
+            location: "Istanbul"
+        },
+        {
+            imageSrc: "resources/wall/wall_16.webp",
+            altText: "painting_1",
+            title: "",
+            date: "2023",
+            location: "Istanbul"
+        },
+        {
+            imageSrc: "resources/wall/wall_17.webp",
+            altText: "painting_1",
+            title: "",
+            date: "2023",
+            location: "Istanbul"
+        },
+        {
+            imageSrc: "resources/wall/wall_18.webp",
+            altText: "painting_1",
+            title: "",
+            date: "2024",
+            location: "Istanbul"
+        },
 
-        ];
-        
-        const motionPageData = [
-            {
-                videoSrc: "resources/mp4/motion_1.mp4",
-                altText: "animation1",
-                title: "a#1",
-                date: "2023",
-                media: "digital",
-                audio: "",
-                credit: "",
-                hasCustomStyle: true,
-            },
-            {
-                videoSrc: "resources/mp4/motion_2.mp4",
-                altText: "animation1",
-                title: "a#1",
-                date: "2023",
-                media: "digital",
-                audio: "",
-                credit: "",
-                hasCustomStyle: true,
-            },
-            {
-                videoSrc: "resources/mp4/motion_4.mp4",
-                altText: "animation1",
-                title: "a#1",
-                date: "2023",
-                media: "digital",
-                audio: "",
-                credit: ""
-            },
-            {
-                videoSrc: "resources/mp4/motion_5.mp4",
-                altText: "animation1",
-                title: "Picnic",
-                date: "2023",
-                media: "digital",
-                audio: "",
-                credit: ""
-            },
-            {
-                videoSrc: "resources/mp4/motion_6.mp4",
-                altText: "animation1",
-                title: "Running from the police",
-                date: "2024",
-                media: "digital",
-                audio: "",
-                credit: ""
-            },
+        {
+            imageSrc: "resources/wall/wall_21.webp",
+            altText: "painting_1",
+            title: "Mural with Köpek",      
+            date: "2023",
+            location: "Istanbul"
+        },
+        {
+            imageSrc: "resources/wall/wall_22.webp",
+            altText: "painting_1",
+            title: "Mural on ship wreck",  
+            date: "2017",
+            location: "Bozcaada"
+        }
+    ];
+    
 
-        ];
+    const motionPageData = [
+        {
+            videoSrc: "resources/mp4/motion_1.mp4",
+            altText: "animation1",
+            title: "Untitled",  // Replaced curly quotes with straight quotes
+            date: "2024",  // Replaced curly quotes with straight quotes
+            media: "digital",
+            audio: "",
+            credit: "",
+            hasCustomStyle: true,
+        },
+        {
+            videoSrc: "resources/mp4/motion_2.mp4",
+            altText: "animation1",
+            title: "Untitled",
+            date: "2024",  // Replaced curly quotes with straight quotes
+            media: "digital",
+            audio: "",
+            credit: "",
+            hasCustomStyle: true,
+        },
+        // {
+        //     videoSrc: "resources/mp4/motion_4.mp4",
+        //     altText: "animation1",
+        //     title: "a#1",
+        //     date: "2023",
+        //     media: "digital",
+        //     audio: "",
+        //     credit: ""
+        // },
+        {
+            videoSrc: "resources/mp4/motion_6.mp4",
+            altText: "animation1",
+            title: "Running from the police",
+            date: "2024",
+            media: "digital",
+            audio: "",
+            credit: ""
+        }
+    ];
         
         function generatePageContent(pageData, pageType) {
             const container = document.querySelector(`.${pageType}_container`);
