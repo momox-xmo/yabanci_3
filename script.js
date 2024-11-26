@@ -250,8 +250,8 @@ scheduleAnimation();
         // },
         {
             imageSrc: "resources/canvas/canvas_5.webp",
-            altText: "painting_2",
-            title: "Untitled <br>from DE series",
+            altText: "img",
+            title: "Untitled <br> DE series",
             year: "2024",
             dimensions: "",
             medium: "pen on paper"
@@ -307,7 +307,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_13.webp",
             altText: "painting_2",
-            title: "Untitled <br>from DE series",
+            title: "Untitled <br> DE series",
             year: "2024",
             dimensions: "",
             medium: "pen on paper"
