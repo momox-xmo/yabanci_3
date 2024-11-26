@@ -227,7 +227,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_2.webp",
             altText: "painting_2",
-            title: "Untitled from DE series",  // Fixed curly quotes
+            title: "Untitled <br>from DE series",  // Fixed curly quotes
             year: "2024",
             dimensions: "",
             medium: "pen on paper"
@@ -251,7 +251,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_5.webp",
             altText: "painting_2",
-            title: "Untitled from DE series",
+            title: "Untitled <br>from DE series",
             year: "2024",
             dimensions: "",
             medium: "pen on paper"
@@ -307,7 +307,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_13.webp",
             altText: "painting_2",
-            title: "Untitled from DE series",
+            title: "Untitled <br>from DE series",
             year: "2024",
             dimensions: "",
             medium: "pen on paper"
@@ -315,7 +315,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_14.webp",
             altText: "painting_2",
-            title: "Kid in New Zealand guiding a cow",  // Fixed curly quotes
+            title: "Kid in New Zealand <br>guiding a cow",  // Fixed curly quotes
             year: "2016",
             dimensions: "A4",
             medium: "pencil on paper"
@@ -323,7 +323,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_15.webp",
             altText: "painting_2",
-            title: "Cover art for Arco-Arco",  // Fixed curly quotes
+            title: "Arco-Arco, <br>Cover art",  // Fixed curly quotes
             year: "2019",
             dimensions: "35x35cm",
             medium: "pen on paper"
@@ -355,7 +355,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_19.webp",
             altText: "painting_2",
-            title: "Portrait of Tsutomu Nihei",  // Fixed curly quotes
+            title: "Portrait of <br>Tsutomu Nihei",  // Fixed curly quotes
             year: "2020",
             dimensions: "A4",
             medium: "pen on paper"
@@ -371,7 +371,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_21.webp",
             altText: "painting_1",
-            title: "Portrait of Yue Minjun",  // Fixed curly quotes
+            title: "Portrait of <br>Yue Minjun",  // Fixed curly quotes
             year: "2016",
             dimensions: "A4",
             medium: "pen on paper"
@@ -387,7 +387,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_23.webp",
             altText: "painting_2",
-            title: "drawing that I left on my grandmother's coffee table",  // Fixed curly quotes
+            title: "drawing that I left <br>on my grandmother's <br>coffee table",  // Fixed curly quotes
             year: "2022",
             dimensions: "",
             medium: "pen on paper"
@@ -395,7 +395,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_24.webp",
             altText: "painting_2",
-            title: "people sleeping on bus",  // Fixed curly quotes
+            title: "people sleeping <br>on bus",  // Fixed curly quotes
             year: "2016",
             dimensions: "A4",
             medium: "pen on paper"
@@ -443,7 +443,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_30.webp",
             altText: "painting_2",
-            title: "Hayal kurmak hala önemli",  
+            title: "Hayal kurmak <br>hala önemli",  
             year: "2022",
             dimensions: "50x70cm",
             medium: "pen on paper"
@@ -527,7 +527,7 @@ scheduleAnimation();
             altText: "painting_1",
             title: "ribcage",
             date: "2016",
-            location: "Boğaziçi Üniversitesi Sarıtepe Kampüsü"
+            location: "Boğaziçi Üniversitesi <br> Sarıtepe Kampüsü"
         },
         {
             imageSrc: "resources/wall/wall_10.webp",
@@ -631,7 +631,7 @@ scheduleAnimation();
         {
             videoSrc: "resources/mp4/motion_6.mp4",
             altText: "animation1",
-            title: "Running from the police",
+            title: "Running from <br>the police",
             date: "2024",
             media: "digital",
             audio: "",
