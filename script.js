@@ -1,11 +1,7 @@
+document.addEventListener('DOMContentLoaded', function() {
 
 
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-
-
-    //LOAING
+    //LOADING SCREEN
     $(window).on("load", function(){
         $(".loader_wrapper").fadeOut(200);
     });
@@ -14,212 +10,346 @@
 
 
     // FETCH HEADER
-        fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
+    fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+    document.getElementById('header').innerHTML = data;
 
             
 
             
 
-            //YABANCI
-            let ani2 = lottie.loadAnimation({
-            container: document.getElementById('yab_logo'),
-            renderer: 'svg',
-            loop: true,
-            autoplay: true, 
-            path: 'resources/assets/menu/yab_logo.json'
-            });
-            let hamburger = lottie.loadAnimation({
-            container: document.getElementById('hamburger'),
-            renderer: 'svg',
-            loop: false,
-            autoplay: false, 
-            path: 'resources/assets/menu/hamburger.json',
-            rendererSettings: {
-                colorFilters: [
-                    {
-                        keypath: "**",
-                        color: '#000000'
-                    }
-            ]
+    //YABANCI
+    let ani2 = lottie.loadAnimation({
+    container: document.getElementById('yab_logo'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true, 
+    path: 'resources/assets/menu/yab_logo.json'
+    });
+    let hamburger = lottie.loadAnimation({
+    container: document.getElementById('hamburger'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false, 
+    path: 'resources/assets/menu/hamburger.json',
+    rendererSettings: {
+        colorFilters: [
+            {
+                keypath: "**",
+                color: '#000000'
             }
-            });
-            const hamburgerContainer = document.getElementById('hamburger');
-            let isOpen = false;
-            const halfwayFrame = 30;
-            let totalFrames;
-            
-            hamburger.addEventListener('DOMLoaded', () => {
-                totalFrames = hamburger.totalFrames - 1;
-            });
-            
-            hamburgerContainer.addEventListener('click', () => {
-                // Toggle active class on the document body
-                document.body.classList.toggle('active');
-                
-                if (!isOpen) {
-                    hamburger.playSegments([0, halfwayFrame], true);
-                    isOpen = true;
-                } else {
-                    hamburger.playSegments([halfwayFrame, totalFrames], true);
-                    isOpen = false;
-                }
-            });
-            
-            hamburgerContainer.addEventListener('mouseenter', () => {
-                hamburgerContainer.style.cursor = 'pointer';
-            });
-
-
-            //WALL
-            let wall = lottie.loadAnimation({
-            container: document.getElementById('wall'),
-            renderer: 'svg',  
-            loop: true,
-            autoplay: false, 
-            path: 'resources/assets/menu/wall.json',
+    ]
+    }
+    });
+    const hamburgerContainer = document.getElementById('hamburger');
+    let isOpen = false;
+    const halfwayFrame = 30;
+    let totalFrames;
+    
+    hamburger.addEventListener('DOMLoaded', () => {
+        totalFrames = hamburger.totalFrames - 1;
+    });
+    
+    hamburgerContainer.addEventListener('click', () => {
+        document.body.classList.toggle('active');
         
-            });
-
-            //CANVAS
-            let canvas = lottie.loadAnimation({
-            container: document.getElementById('canvas'),
-            renderer: 'svg',
-            loop: true,
-            autoplay: false, 
-            path: 'resources/assets/menu/canvas.json'
-            });
-
-            //MP4
-            let mp4 = lottie.loadAnimation({
-            container: document.getElementById('mp4'),
-            renderer: 'svg',
-            loop: true,
-            autoplay: false, 
-            path: 'resources/assets/menu/mp4.json'
-            });
-
-            //PUBLISH
-            let publish = lottie.loadAnimation({
-            container: document.getElementById('publish'), // Replace with your container's ID
-            renderer: 'svg',
-            loop: false, 
-            autoplay: false, 
-            path: 'resources/assets/menu/publish.json', // Path to your animation JSON
-            });
+        if (!isOpen) {
+            hamburger.playSegments([0, halfwayFrame], true);
+            isOpen = true;
+        } else {
+            hamburger.playSegments([halfwayFrame, totalFrames], true);
+            isOpen = false;
+        }
+    });
     
-                // Start at the first frame
-                publish.goToAndStop(0, true);
+    hamburgerContainer.addEventListener('mouseenter', () => {
+        hamburgerContainer.style.cursor = 'pointer';
+    });
+
+
+
+
+    //WALL
+    let wall = lottie.loadAnimation({
+    container: document.getElementById('wall'),
+    renderer: 'svg',  
+    loop: true,
+    autoplay: false, 
+    path: 'resources/assets/menu/wall.json',
+
+    });
+
+    //CANVAS
+    let canvas = lottie.loadAnimation({
+    container: document.getElementById('canvas'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false, 
+    path: 'resources/assets/menu/canvas.json'
+    });
+
+    //MP4
+    let mp4 = lottie.loadAnimation({
+    container: document.getElementById('mp4'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false, 
+    path: 'resources/assets/menu/mp4.json'
+    });
+
+    //PUBLISH
+    let publish = lottie.loadAnimation({
+    container: document.getElementById('publish'), // Replace with your container's ID
+    renderer: 'svg',
+    loop: false, 
+    autoplay: false, 
+    path: 'resources/assets/menu/publish.json', // Path to your animation JSON
+    });
+
+        // Start at the first frame
+        publish.goToAndStop(0, true);
+
+        // Add hover event listeners
+        let container = document.getElementById('publish');
+
+        // On hover, play the animation at normal speed
+        container.addEventListener('mouseenter', () => {
+        publish.loop = true;
+        publish.setSpeed(3); // Normal speed
+        publish.play(); // Play animation
+        });
+
+        // On mouse leave, increase speed and continue playing
+        container.addEventListener('mouseleave', () => {
+        publish.loop = false;
+        publish.setSpeed(20); // Increase speed
+        publish.play(); // Continue playing
+
+        // Reset to the first frame when the animation completes
+        publish.addEventListener('complete', () => {
+        publish.goToAndStop(0, true); // Reset to the first frame
+
+        });
+    });
+})
+.catch(error => console.error('Error fetching header:', error));
+
+
+
+
+
+
+
+
+    //FETCH FOOTER
+    fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+    document.getElementById('footer').innerHTML = data;
     
-                // Add hover event listeners
-                let container = document.getElementById('publish');
-    
-                // On hover, play the animation at normal speed
-                container.addEventListener('mouseenter', () => {
-                publish.loop = true;
-                publish.setSpeed(3); // Normal speed
-                publish.play(); // Play animation
-                });
-    
-                // On mouse leave, increase speed and continue playing
-                container.addEventListener('mouseleave', () => {
-                publish.loop = false;
-                publish.setSpeed(20); // Increase speed
-                publish.play(); // Continue playing
-    
-                // Reset to the first frame when the animation completes
-                publish.addEventListener('complete', () => {
-                publish.goToAndStop(0, true); // Reset to the first frame
-
-                 });
-
-
-             //Smokerr
-             let smoker = lottie.loadAnimation({
-                container: document.getElementById('smoker'),
-                renderer: 'canvas',
-                loop: true,
-                autoplay: true, 
-                path: 'resources/assets/animations/smoker.json'
-                });
-
-
-
-
-
-
                 
-                });
+    });       
 
 
 
-                //FETCH FOOTER
-                fetch('footer.html')
-                .then(response => response.text())
-                .then(data => {
-                document.getElementById('footer').innerHTML = data;
-                
-                
-                });        
-                });
-        const MIN_DELAY = 2000;    
-        const MAX_DELAY = 40000;    
-        const MIN_INTERVAL = 20000; 
-        // const FRAME_COUNT = 12;     
-        // const FPS = 20;           
-        const ANIMATION_DURATION = 600;
 
-        const bugContainer = document.getElementById('bug');
-        const bugImage = document.getElementById('bug_png');
+        
+    const MIN_DELAY = 2000;    
+    const MAX_DELAY = 40000;    
+    const MIN_INTERVAL = 20000; 
+    // const FRAME_COUNT = 12;     
+    // const FPS = 20;           
+    const ANIMATION_DURATION = 600;
 
-        const playAnimation = () => {
-            bugContainer.style.display = 'block';
-            bugImage.src = "";
-            void bugImage.offsetWidth;
-            bugImage.src = "resources/assets/ezgif_bug_4.png";
-            
-            setTimeout(() => {
-                bugContainer.style.display = 'none';
-            }, ANIMATION_DURATION);
-        };
+    const bugContainer = document.getElementById('bug');
+    const bugImage = document.getElementById('bug_png');
 
-const scheduleAnimation = () => {
+    const playAnimation = () => {
+        bugContainer.style.display = 'block';
+        bugImage.src = "";
+        void bugImage.offsetWidth;
+        bugImage.src = "resources/assets/ezgif_bug_4.png";
+        
+        setTimeout(() => {
+            bugContainer.style.display = 'none';
+        }, ANIMATION_DURATION);
+    };
+
+    const scheduleAnimation = () => {
     const randomDelay = Math.random() * (MAX_DELAY - MIN_DELAY) + MIN_DELAY;
     setTimeout(() => {
         playAnimation();
         setTimeout(scheduleAnimation, MIN_INTERVAL);
     }, randomDelay);
-};
+    };
 
 
-scheduleAnimation();
+    scheduleAnimation();
+    
 
+
+
+    const eyeConfigs = [
+        { 
+            eyeId: 'eye_1', 
+            socketId: 'eye_socket_1',
+            rotation: 0,
+            currentX: 0,  // Track the current "imaginary cursor" position for eye_1
+            currentY: 0
+        },
+        { 
+            eyeId: 'eye_2', 
+            socketId: 'eye_socket_2',
+            rotation: 0,
+            currentX: 0,
+            currentY: 0
+        }
+    ];
+    
+    // Control how far the pupil can move from the center (within the eye socket)
+    const movementFactor = 0.5;  // Adjust this value (0.0 - 1.0)
+    const smoothFactor = 1;  // How fast the eye follows the cursor
+    
+    // Timer to track mouse activity
+    let lastMouseMove = Date.now();
+    const idleThreshold = 1000; // Time in ms to wait before considering the device "idle"
+    
+    // Function to calculate the movement of the pupil inside the elliptical eye socket
+    function calculateEyeMovement(socketWidth, socketHeight, targetX, targetY) {
+        const a = socketWidth / 2;  // Semi-major axis (horizontal radius)
+        const b = socketHeight / 2; // Semi-minor axis (vertical radius)
+    
+        // Normalize the target position based on the ellipse's radii
+        let normalizedX = targetX / a;
+        let normalizedY = targetY / b;
+    
+        // Calculate the squared distance from the center
+        const distanceSquared = normalizedX * normalizedX + normalizedY * normalizedY;
+    
+        // If the distance exceeds 1 (outside the ellipse), we need to scale it down
+        if (distanceSquared > 1) {
+            const distance = Math.sqrt(distanceSquared);
+            normalizedX /= distance;
+            normalizedY /= distance;
+        }
+    
+        // Apply the scaling factor to control how far the pupil moves
+        const constrainedX = normalizedX * a * movementFactor;
+        const constrainedY = normalizedY * b * movementFactor;
+    
+        return { x: constrainedX, y: constrainedY };
+    }
+    
+    // Function to update the position of the pupils smoothly (as if they follow imaginary cursors)
+    function updateEyePosition(event) {
+        lastMouseMove = Date.now(); // Reset the timer on mouse move
+    
+        eyeConfigs.forEach(config => {
+            const eye = document.getElementById(config.eyeId);
+            const socket = document.getElementById(config.socketId);
+    
+            if (!eye || !socket) return;
+    
+            // Get the socket's bounding box (dimensions and position)
+            const socketRect = socket.getBoundingClientRect();
+            const socketCenterX = socketRect.left + socketRect.width / 2;
+            const socketCenterY = socketRect.top + socketRect.height / 2;
+    
+            // Calculate the relative position of the cursor within the eye socket
+            const dx = event.clientX - socketCenterX;
+            const dy = event.clientY - socketCenterY;
+    
+            // Smoothly move the eye's "imaginary cursor" toward the actual cursor position
+            config.currentX += (dx - config.currentX) * smoothFactor;
+            config.currentY += (dy - config.currentY) * smoothFactor;
+    
+            // Get the constrained movement of the pupil based on the "imaginary cursor"
+            const { x: constrainedOffsetX, y: constrainedOffsetY } = calculateEyeMovement(
+                socketRect.width,
+                socketRect.height,
+                config.currentX,
+                config.currentY
+            );
+    
+            // Apply the calculated offset to move the pupil with smooth transition
+            eye.style.transition = "transform 0.4s ease-out";  // Smooth transition for the transform
+            eye.style.transform = `
+                rotate(${config.rotation}deg)
+                translate(${constrainedOffsetX}px, ${constrainedOffsetY}px)
+            `;
         });
+    }
+    
+    // Function to make the eyes wander together when idle (without mouse input)
+    function makeEyesWander() {
+        const maxMovement = 10; // Maximum pixel movement for wandering
+        let wanderX = Math.random() * maxMovement * 2 - maxMovement; // Random horizontal movement
+        let wanderY = Math.random() * maxMovement * 2 - maxMovement; // Random vertical movement
+    
+        // Apply the same wandering movement to both eyes
+        eyeConfigs.forEach(config => {
+            const eye = document.getElementById(config.eyeId);
+            if (!eye) return;
+    
+            // Update the "imaginary cursor" of both eyes with the same wandering movement
+            config.currentX += wanderX;
+            config.currentY += wanderY;
+    
+            // Get the constrained movement of the pupil based on the "imaginary cursor"
+            const socket = document.getElementById(config.socketId);
+            const socketRect = socket.getBoundingClientRect();
+            
+            const { x: constrainedOffsetX, y: constrainedOffsetY } = calculateEyeMovement(
+                socketRect.width,
+                socketRect.height,
+                config.currentX,
+                config.currentY
+            );
+    
+            // Apply the wandering movement with smooth transition
+            eye.style.transition = "transform 0.5s ease-out";  // Smooth transition for wandering
+            eye.style.transform = `
+                rotate(${config.rotation}deg)
+                translate(${constrainedOffsetX}px, ${constrainedOffsetY}px)
+            `;
+        });
+    }
+    
+    // Check if the mouse has been idle for too long and trigger wandering
+    function checkForIdle() {
+        const currentTime = Date.now();
+        if (currentTime - lastMouseMove > idleThreshold) {
+            // If idle for more than `idleThreshold`, make the eyes wander together
+            makeEyesWander();
+        }
+    }
+    
+    // Listen for the mousemove event to update the pupil position
+    document.addEventListener('mousemove', updateEyePosition);
+    
+    // Periodically check if the mouse is idle (run every 500ms)
+    setInterval(() => {
+        checkForIdle();
+    }, 500); // Check every 500ms
+    
+    
+
+
+
+
+
+
+
+
+    
+    
+});
+
         
         
         
         
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //CONTENT   
     const canvasPageData = [
@@ -227,7 +357,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_2.webp",
             altText: "painting_2",
-            title: "Untitled <br>from DE series",  // Fixed curly quotes
+            title: "Untitled <br>from DE series",  
             year: "2024",
             dimensions: "",
             medium: "pen on paper"
@@ -235,7 +365,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_3.webp",
             altText: "painting_2",
-            title: "Rival dealer",  // Fixed curly quotes
+            title: "Rival dealer",  
             year: "2017",
             dimensions: "25x25",
             medium: "Mixed media on canvas"
@@ -259,7 +389,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_6.webp",
             altText: "painting_1",
-            title: "Domino’s Pizza",  // Fixed curly quotes
+            title: "Domino’s Pizza",  
             year: "2017",
             dimensions: "",
             medium: "pen on tissue paper"
@@ -275,7 +405,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_8.webp",
             altText: "painting_2",
-            title: "Friend sleeping",  // Fixed curly quotes
+            title: "Friend sleeping",  
             year: "2019",
             dimensions: "50x70cm",
             medium: "pen on paper"
@@ -283,7 +413,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_9.webp",
             altText: "painting_2",
-            title: "Golem playing at Pixie",  // Fixed curly quotes
+            title: "Golem playing at Pixie",  
             year: "2018",
             dimensions: "",
             medium: "pen on paper"
@@ -315,7 +445,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_14.webp",
             altText: "painting_2",
-            title: "Kid in New Zealand <br>guiding a cow",  // Fixed curly quotes
+            title: "Kid in New Zealand <br>guiding a cow",  
             year: "2016",
             dimensions: "A4",
             medium: "pencil on paper"
@@ -323,7 +453,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_15.webp",
             altText: "painting_2",
-            title: "Arco-Arco, <br>Cover art",  // Fixed curly quotes
+            title: "Arco-Arco, <br>Cover art",  
             year: "2019",
             dimensions: "35x35cm",
             medium: "pen on paper"
@@ -347,7 +477,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_18.webp",
             altText: "painting_2",
-            title: "hug.1",  // Fixed curly quotes
+            title: "hug.1",
             year: "2022",
             dimensions: "",
             medium: "pen on paper"
@@ -355,7 +485,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_19.webp",
             altText: "painting_2",
-            title: "Portrait of <br>Tsutomu Nihei",  // Fixed curly quotes
+            title: "Portrait of <br>Tsutomu Nihei", 
             year: "2020",
             dimensions: "A4",
             medium: "pen on paper"
@@ -371,7 +501,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_21.webp",
             altText: "painting_1",
-            title: "Portrait of <br>Yue Minjun",  // Fixed curly quotes
+            title: "Portrait of <br>Yue Minjun",  
             year: "2016",
             dimensions: "A4",
             medium: "pen on paper"
@@ -387,7 +517,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_23.webp",
             altText: "painting_2",
-            title: "drawing that I left <br>on my grandmother's <br>coffee table",  // Fixed curly quotes
+            title: "drawing that I left <br>on my grandmother's <br>coffee table", 
             year: "2022",
             dimensions: "",
             medium: "pen on paper"
@@ -395,7 +525,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/canvas/canvas_24.webp",
             altText: "painting_2",
-            title: "people sleeping <br>on bus",  // Fixed curly quotes
+            title: "people sleeping <br>on bus", 
             year: "2016",
             dimensions: "A4",
             medium: "pen on paper"
@@ -518,7 +648,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/wall/wall_4.webp",
             altText: "painting_1",
-            title: "16 faces",  // Fixed curly quotes
+            title: "16 faces",  
             date: "2024",
             location: "Istanbul"
         },
@@ -539,7 +669,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/wall/wall_11.webp",
             altText: "painting_1",
-            title: "Gian Albert",  // Fixed curly quotes
+            title: "Gian Albert",  
             date: "2018",
             location: "Milan"
         },
@@ -555,7 +685,7 @@ scheduleAnimation();
         {
             imageSrc: "resources/wall/wall_15.webp",
             altText: "painting_1",
-            title: "Sleep (Mascara on wall)",  // Fixed curly quotes
+            title: "Sleep (Mascara on wall)",  
             date: "2024",
             location: "Istanbul"
         },
@@ -602,8 +732,8 @@ scheduleAnimation();
         {
             videoSrc: "resources/mp4/motion_1.mp4",
             altText: "animation1",
-            title: "Untitled",  // Replaced curly quotes with straight quotes
-            date: "2024",  // Replaced curly quotes with straight quotes
+            title: "Untitled", 
+            date: "2024",  
             media: "digital",
             audio: "",
             credit: "",
@@ -613,7 +743,7 @@ scheduleAnimation();
             videoSrc: "resources/mp4/motion_2.mp4",
             altText: "animation1",
             title: "Untitled",
-            date: "2024",  // Replaced curly quotes with straight quotes
+            date: "2024",  
             media: "digital",
             audio: "",
             credit: "",
@@ -722,11 +852,11 @@ scheduleAnimation();
         
                 contentBox.appendChild(descriptionDiv);
         
-                // Closing div (if needed)
+
                 const closingDiv = document.createElement('div');
                 contentBox.appendChild(closingDiv);
         
-                // Add to container
+
                 container.appendChild(contentBox);
             });
         }
@@ -741,15 +871,5 @@ scheduleAnimation();
                 generatePageContent(motionPageData, 'motion');
             }
 
-
-
-
-
-
-
-
-
-
-
-        });
+});
 
