@@ -888,6 +888,11 @@ width: 100%;
 /* margin-top: 20vh; */
 }
 
+.publish_card img{
+    width: 100%;
+    max-width: 13rem;
+    margin-bottom: 1rem;
+}
 
 }
 
