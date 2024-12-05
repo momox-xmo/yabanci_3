@@ -12,31 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // FETCH HEADER
-    fetch('header.html')
+    fetch('/header.html')
     .then(response => response.text())
     .then(data => {
     document.getElementById('header').innerHTML = data;
-    // Variable
-        
-    //   const header = document.getElementById('header');
-    //   let lastScrollTop = 0;
-
-    //   window.addEventListener('scroll', function() {
-    //     let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        
-    //     if (currentScroll > lastScrollTop) {
-    //       // Scrolling down
-    //       header.style.transform = 'translateY(-100%)';
-    //     } else {
-    //       // Scrolling up
-    //       header.style.transform = 'translateY(0)';
-    //     }
-        
-    //     lastScrollTop = currentScroll;
-    //   });
-
-    // //PASTE CODE HERE/
-            
+       
 
     //YABANCI
     let logo = lottie.loadAnimation({
@@ -50,19 +30,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // Set the initial loop between frames 0 and 40
-  logo.playSegments([0, 300], true);
+  logo.playSegments([0, 40], true);
   logo.setSpeed(1.0);
 
   // Handle hover to switch to loop between frames 40 and 100
   document.getElementById('yab_logo').addEventListener('mouseenter', function() {
-    logo.playSegments([300, 400], true);
+    logo.playSegments([50, 60], true);
     logo.setSpeed(1);
     
   });
 
   // Handle mouse leave to switch back to loop between frames 0 and 40
   document.getElementById('yab_logo').addEventListener('mouseleave', function() {
-    logo.playSegments([0, 300], true);
+    logo.playSegments([0, 40], true);
     logo.setSpeed(1.0);
   });
 
@@ -85,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     const hamburgerContainer = document.getElementById('hamburger');
     let isOpen = false;
-    const halfwayFrame = 30;
+    const halfwayFrame = 45;
     let totalFrames;
     
     hamburger.addEventListener('DOMLoaded', () => {
@@ -137,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     container: document.getElementById('works'),
     renderer: 'svg',
     loop: true,
-    autoplay: true, 
+    autoplay: false, 
     path: 'resources/assets/menu/works.json'    
     });
 
@@ -195,15 +175,6 @@ document.addEventListener('DOMContentLoaded', function() {
         autoplay: false, 
         path: 'resources/assets/menu/shop.json', // Path to your animation JSON
         });
-
-        let algida = lottie.loadAnimation({
-        container: document.getElementById('algida'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true, 
-        path: 'resources/assets/algida_w.json'
-        });
-        
             
 })
 

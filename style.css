@@ -2,17 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-
-
 *{  
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
+    box-sizing: content-box;
     color: #000000;
+    
     /* border: 0.4px solid red; */
-    
-    
 }
 
 html, body{
@@ -23,10 +20,12 @@ html, body{
     flex-direction: column;
     margin: 0px;
     font-size: 18px;
-    /* overflow-y: scroll; */
+
     width:100%;
+}
 
-
+body{
+    overflow-x:hidden;
 }
 
 body.no-scroll {
@@ -37,6 +36,7 @@ body.no-scroll {
     display: flex;               
     flex-direction: column; 
     height: 100vh;
+    
 
     /* filter: invert(); */
     
@@ -71,7 +71,7 @@ p {
 
 
 
-/* header */
+/* HEADER */
 @media {
 
 #walking_guy{
@@ -79,21 +79,13 @@ p {
 }
 
 #header{
-    position: fixed;
-    top: 0;
-    z-index: 99;
-    width: 100%;
-    /* height: 4rem; */
-    /* border: 2px solid rgb(47, 11, 252); */
-    transition: top 0.3s ease, 0.3s ease; /* Smooth transition for hiding and blur */
+position: fixed;
+top: 0;
+z-index: 99;
+width: 100%;
 
-
-    
+transition: top 0.3s ease, 0.3s ease;   
 }
-
-/* #header.blur {
-    filter: blur(5px);
-} */
 
 header {
 
@@ -108,9 +100,10 @@ grid-template-columns: 1rem 20rem;
 justify-content: space-between; 
 align-items: center;
 margin: 0 auto;
-max-width: 1200px;
+max-width: 66rem;
 padding-inline: 0.5rem;
 height: 3.7rem;
+/* border: 0.4px solid rgb(27, 255, 6); */
 }
 
 #yab_logo{
@@ -131,7 +124,7 @@ gap: 0.8rem;
 border: none; /* Remove the border on the menu container */
 margin-left: auto; 
 padding-right: 0.7rem;
-/* border: 0.4px solid rgb(27, 255, 6); */
+
 }
   
 
@@ -140,6 +133,7 @@ display: grid;
 /* width: auto; */
 /* height:25px;  */
 /* padding-top: 0.4rem; */
+
 margin: 0;
 }
 
@@ -162,23 +156,23 @@ list-style: none;
     z-index:99999;
 }
 
+#mp4 {
 
-
-/*  */
+    transition: filter 0.2s ease-in;  
+}
 
 #mp4:hover{
-    /* filter: blur(6px); */
-    animation-duration: 4s;    
+    filter: blur(7px);
 }
 
 
 
 }
-
-
-
 
 /* FOOTER */
+@media {
+    
+
 #footer{
     display: flex;
     align-self: center;
@@ -204,10 +198,125 @@ footer div a{
 footer div a:hover{
     color: #FC0FC0;
 }
+}
+
+/* LANDING PAGE */
+@media  {
+    .smoker_wrapper{
+        width: 100%;
+        /* border: 2px  solid; */
+        max-width: 66rem;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+    .smoker {
+        position: relative;  
+        width: 100%;
+        min-width: 45rem;
+        /* height: 50rem; */
+        /* width: auto; *
+        /* /* justify-content: center; */
+        align-items: center;
+        justify-self: center;
+        /* border: 2px solid red; */
+        /* margin-left: 10vh; */
+        margin-right: auto;
+        /* left: 5vw; */
+        bottom: 5rem;
+        z-index: -99;
+    }
+    
+    .smoker_image{
+        position: relative;
+        width: 100%;
+        pointer-events: none;
+        /* z-index: 100;    */
+    }
+    
+    .smoker_image img{
+        width: 100%; 
+    }
+    
+    #eye_socket_1{
+        position: absolute;
+        /* border: 0.1px solid red; */
+        height: 0.7%;
+        width:  8.5%;
+        bottom: 72%;
+        left: 17.5%;
+        border-radius: 60%;
+        transform: rotate(-27deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* z-index: 9999; */
+    }
+    
+    #eye_socket_2{
+        position: absolute;
+        /* border: 0.1px solid red; */
+        height: 0.8%;
+        width: 8%;   
+        bottom: 83%;
+        left: 37%;
+        border-radius: 50%;
+        transform: rotate(-22deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* z-index: 9999; */
+    }
+    
+    #eye_1, #eye_2 {
+        /* display: none; */
+        position: relative;
+        z-index: -1; 
+        width:40%;
+        height: auto;
+    }
+    
+    
+    .info_wrapper{
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 66rem;
+        margin-right: auto;
+        margin-left: auto;
+        align-items: end;
+        justify-content: end;
+        padding-inline: 1rem;
+    }
+    
+    .yabanci_info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;   
+    z-index: 9999;
+    margin-top: 18vh;
+    width: 100%;
+    max-width: 17rem;
+    margin-left: 55%;
+    margin-right: 1rem;
+    }
+    
+    
+    .yabanci_info a:hover{ 
+        color: #5c5c5c;
+    }
+    .artist_contact{
+        display: flex;
+        flex-direction: column;
+    }
+
+    }
 
 
 
 /* CONTENT CARD */
+@media  {
+
 .box_container {
 /* max-width: 600px; */
 width: 100%;
@@ -267,48 +376,44 @@ gap: 1rem;
     box-shadow: 0  0 20px  rgb(247, 247, 247);
 }
 
-
-
-
+}
 
 /* VIDEO CARD */
-/* body {
-    overflow-x: hidden;
-  } */
-
+@media  {
 .video_section{
     padding-top: 4rem;
     background-color: black;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-
 .video_container{
-    width: 100%;
+    /* width: 100%; */
     
     display: flex;
     flex-direction: column;
-    /* padding-block: 3rem; */
     padding-inline: 1rem;
     margin-inline: auto;
-    /* border: 0.4px solid red; */
-
 }
 .video{
-    margin-inline: auto;   
+
     margin-top: 2rem;
     margin-bottom: 3rem;
     /* border: 0.4px solid red; */
 }
 .video video{
-    padding-inline: 1rem;
-    width: 100%;    
-    max-width: 1200px;
+    /* padding-inline: 1rem; */
+    width: 100%;
+    max-width: 66rem;
 }
 .video_id{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-inline: 1rem;
+    /* padding-inline: 1rem; */
 }
 .video_id h2{
     color: white; 
@@ -317,68 +422,110 @@ gap: 1rem;
 .video_id p{
     color: white; 
 }
-/*  */
+
+.video_id a{
+    color: white;
+}
+
+.video_id a:hover{
+    color: #5c5c5c;
+}
+}
 
 
+/* PUBLISH */
+@media {
 
-
-
-
-
-/* 404 */
-
-
-.lost{
-    
+.publish_card{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6rem;
+    width: 100%;
+    max-width: 66rem;
+    align-items: end;
+    gap: 2rem;
 
+}
+.publish_card >div{
+    padding-inline: 1rem;
 
 }
 
 
-.lost p{
-    font-size: 1rem;
-    margin-bottom: 7rem;
+.publish_card img{
+    width: 100%;
+    max-width: 20rem;
+    margin-bottom: 1rem;
 }
 
-#dog img{
-    width: 20rem;
-    height: auto;
+.publish_description {
+    width: 100%;
+    max-width: 18rem;
+    display: flex;
+    justify-content: space-between;
 }
 
-
-
-
-.lost h1 {
-    font-weight: 600;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0rem;
-    font-size: 2rem; 
+.download_button {
+    width: 1.5rem;
+    place-self: center;
 }
 
-.lost p {
-    font-size: 1rem;
-    margin-bottom: 7rem;
-    font-size: 0.8rem;
 }
+    
 
-.lost p a{
-    color: #FC0FC0;
-}
+/* 404 */
+@media {
+    .lost{  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+    
+    
+    .lost p{
+        font-size: 1rem;
+        margin-bottom: 7rem;
+    }
+    
+    #dog img{
+        width: 20rem;
+        height: auto;
+    }
+    
+    
+    
+    
+    .lost h1 {
+        font-weight: 600;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        letter-spacing: 0rem;
+        font-size: 2rem; 
+    }
+    
+    .lost p {
+        font-size: 1rem;
+        margin-bottom: 7rem;
+        font-size: 0.8rem;
+    }
+    
+    .lost p a{
+        color: #FC0FC0;
+    }
+    
+    #dog img {
+        /* width: 10rem; */
+        height: auto;
+    }
+    }
+    
 
-#dog img {
-    /* width: 10rem; */
-    height: auto;
-}
+/* BUG and BIRD*/
+@media{
 
-
-
-
-/* BUG */
 #bug{
     display: none;
 
@@ -436,176 +583,7 @@ gap: 1rem;
     width: 100%;
 }
 
-#hamburger{
-/* display: flexbox; */
 }
-
-.smoker {
-    position: relative;  
-    margin-top: 18vh;
-    width: 50rem;
-    /* height: 50rem; */
-    /* width: auto; *
-    /* /* justify-content: center; */
-    align-items: center;
-    justify-self: center;
-    /* border: 2px solid red; */
-    /* left: -8rem; */
-    left: 5vw;
-}
-
-.smoker_image{
-    position: relative;
-    width: 100%;
-    pointer-events: none;
-    /* z-index: 100;    */
-}
-
-.smoker_image img{
-    width: 100%; 
-}
-
-#eye_socket_1{
-    position: absolute;
-    /* border: 0.1px solid red; */
-    height: 0.7%;
-    width:  8.5%;
-    bottom: 72%;
-    left: 17.5%;
-    border-radius: 60%;
-    transform: rotate(-27deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* z-index: 9999; */
-}
-
-#eye_socket_2{
-    position: absolute;
-    /* border: 0.1px solid red; */
-    height: 0.8%;
-    width: 8%;   
-    bottom: 83%;
-    left: 37%;
-    border-radius: 50%;
-    transform: rotate(-22deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* z-index: 9999; */
-}
-
-#eye_1, #eye_2 {
-    /* display: none; */
-    position: relative;
-    z-index: -1; 
-    width:40%;
-    height: auto;
-}
-
-.yabanci_info {
-    position: absolute;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-decoration: none;
-    z-index: 9999;
-    margin-top: 8vh;
-    width: 100%;
-    /* padding-left: 15vw; */
-}
-
-.yabanci_info h1 { 
-    font-size: 2.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    margin-bottom: 0.8rem;
-    text-align: center;    
-}
-
-.yabanci_info a { 
-    text-align: center;
-    text-decoration: none;
-}
-
-.yabanci_info a:hover{ 
-    color: #FC0FC0;
-}
-
-
-
-/* PUBLISH */
-
-.publish_card{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    /* height: 100%; */
-    margin-top: 6rem;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    /* border: 2px solid red; */
-    padding-left: 40vw;
-
-}
-
-
-.publish_card img{
-
-    width: 100%;
-    max-width: 16rem;
-    /* border: 0.1px solid rgb(135, 135, 135); */
-}
-
-.publish_description {
-    width: 100%;
-    max-width: 18rem;
-    padding-inline: 1rem;
-    /* border: 2px solid blue; */
-    display: flex;
-    /* display: grid; */
-    /* grid-template-columns: 80% 1fr; */
-
-}
-
-
-.publish_text {
-    width: 100%;
-    max-width: 20rem;
-    /* border: 2px solid red; */
-    /* display: flex; */
-    
-
-}
-
-.publish_text h2, .publish_text p {
-    line-height: 0.5rem;
-}
-
-
-
-.download_button {
-    /* height: 100%; */
-    width: 1.5rem;
-
-    place-self: center;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -670,6 +648,12 @@ width: 100%;
 margin: 0rem auto;
 }
     
+.yabanci_info {
+    /* display: flex; */
+    /* margin-left: 50%; */
+    /* padding: 1rem */
+
+}
     
 }
 
@@ -678,11 +662,11 @@ margin: 0rem auto;
 @media (max-width:600px){
 
 .header{
-    padding-inline: 2rem;
+    padding-inline: 1rem;
 }
 .nav{
 display: flex;
-height: 2.4rem;
+height: 1rem;
 padding: 1rem;
 padding-block: 1.8rem;
 }
@@ -693,8 +677,6 @@ display: flex;
 z-index: 9999;
 
 }
-
-
 
 
 
@@ -858,7 +840,8 @@ height: 2rem;
 
 .smoker {
 /* border: 2px solid  #FC0FC0; */
-position: relative;  
+left: -6rem;
+bottom: 0rem;
 padding: 0;
 /* width: 30rem; */
 max-width: 150vw;
@@ -867,26 +850,41 @@ margin: 0;
 margin-top: 30vh;
 }
 
+.info_wrapper{
+    position: absolute;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
 .yabanci_info {
+margin-top: 5rem;
 color: #000000;
-position: absolute;
-align-items: center;
+margin-inline: 0;
+margin-left: auto;
+margin-right: auto;
 display: flex;
 flex-direction: column;
-justify-content: center;
-text-decoration: none;
+text-align: center;
 z-index: 1;
 width: 100%;
-padding-inline: 2rem;
-margin-top: 20vh;
+/* margin-top: 20vh; */
 }
 
-.yabanci_info h1 {
-font-size: 2rem;
-line-height: 2rem;
-margin-bottom: 2rem;
-}
 
 }
 
 
+@media (min-width: 2000px){
+    html, body{
+    
+        font-size: 28px;
+        width:100%;
+    
+    
+    }
+}
