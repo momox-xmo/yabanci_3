@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     $(window).on("load", function(){
         $(".loader_wrapper").fadeOut(200);
     });
-        
+
+
+    
     
 
 
@@ -14,19 +16,58 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.text())
     .then(data => {
     document.getElementById('header').innerHTML = data;
+    // Variable
+        
+    //   const header = document.getElementById('header');
+    //   let lastScrollTop = 0;
 
-            
+    //   window.addEventListener('scroll', function() {
+    //     let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+    //     if (currentScroll > lastScrollTop) {
+    //       // Scrolling down
+    //       header.style.transform = 'translateY(-100%)';
+    //     } else {
+    //       // Scrolling up
+    //       header.style.transform = 'translateY(0)';
+    //     }
+        
+    //     lastScrollTop = currentScroll;
+    //   });
 
+    // //PASTE CODE HERE/
             
 
     //YABANCI
-    let ani2 = lottie.loadAnimation({
+    let logo = lottie.loadAnimation({
     container: document.getElementById('yab_logo'),
     renderer: 'svg',
     loop: true,
     autoplay: true, 
-    path: 'resources/assets/menu/yab_logo.json'
+    path: 'resources/assets/menu/yab_logo_2.json'
     });
+
+
+
+  // Set the initial loop between frames 0 and 40
+  logo.playSegments([0, 300], true);
+  logo.setSpeed(1.0);
+
+  // Handle hover to switch to loop between frames 40 and 100
+  document.getElementById('yab_logo').addEventListener('mouseenter', function() {
+    logo.playSegments([300, 400], true);
+    logo.setSpeed(1);
+    
+  });
+
+  // Handle mouse leave to switch back to loop between frames 0 and 40
+  document.getElementById('yab_logo').addEventListener('mouseleave', function() {
+    logo.playSegments([0, 300], true);
+    logo.setSpeed(1.0);
+  });
+
+
+
     let hamburger = lottie.loadAnimation({
     container: document.getElementById('hamburger'),
     renderer: 'svg',
@@ -71,22 +112,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     //WALL
-    let wall = lottie.loadAnimation({
-    container: document.getElementById('wall'),
-    renderer: 'svg',  
-    loop: true,
-    autoplay: false, 
-    path: 'resources/assets/menu/wall.json',
+    let wallAnimation = lottie.loadAnimation({
+        container: document.getElementById('wall'),
+        renderer: 'svg',
+        loop: false,  // Prevent the animation from looping
+        autoplay: false,  // Prevent the animation from autoplaying
+        path: 'resources/assets/menu/wall.json',
+      });
+      
+      // Play animation from first to last frame on hover
+      document.getElementById('wall').addEventListener('mouseenter', function() {
+        wallAnimation.play();  // Start playing forward from the first frame
+      });
+      
+      // Reverse animation from last frame to first on mouse leave
+      document.getElementById('wall').addEventListener('mouseleave', function() {
+        wallAnimation.stop();  // Stop animation at current position
+        wallAnimation.playSegments([wallAnimation.totalFrames, 0], true);  // Play in reverse until first frame
+      });
+   
 
-    });
-
-    //CANVAS
-    let canvas = lottie.loadAnimation({
-    container: document.getElementById('canvas'),
+    //Works
+    let works = lottie.loadAnimation({
+    container: document.getElementById('works'),
     renderer: 'svg',
     loop: true,
-    autoplay: false, 
-    path: 'resources/assets/menu/canvas.json'
+    autoplay: true, 
+    path: 'resources/assets/menu/works.json'    
     });
 
     //MP4
@@ -97,6 +149,9 @@ document.addEventListener('DOMContentLoaded', function() {
     autoplay: false, 
     path: 'resources/assets/menu/mp4.json'
     });
+
+    
+
 
     //PUBLISH
     let publish = lottie.loadAnimation({
@@ -132,14 +187,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
         });
     });
+    //PUBLISH
+    let shop = lottie.loadAnimation({
+        container: document.getElementById('shop'), // Replace with your container's ID
+        renderer: 'svg',
+        loop: false, 
+        autoplay: false, 
+        path: 'resources/assets/menu/shop.json', // Path to your animation JSON
+        });
+
+        let algida = lottie.loadAnimation({
+        container: document.getElementById('algida'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true, 
+        path: 'resources/assets/algida_w.json'
+        });
+        
+            
 })
+
+
 .catch(error => console.error('Error fetching header:', error));
 
 
 
 
 
-
+    
 
 
     //FETCH FOOTER
@@ -152,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });       
 
 
-
+    
 
         
     const MIN_DELAY = 2000;    

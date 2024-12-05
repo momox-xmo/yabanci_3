@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yabanci | works</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="icon" href="resources/assets/favicon.png" type="image/png">
+</head>
+
+
+<body>
+
+    <div id="header"></div>
+
+    <div class="loader_wrapper" >
+        <div class="loader"><img src="resources/assets/bird.png" alt="bird"></div>
+    </div>
+    
+
+    <div class="bug" id="bug">
+        <img id="bug_png" src="resources/assets/ezgif_bug_4.png" alt="bug_animation"  ></img>
+    </div>
+
+    <div class="box_container canvas_container"></div>
+
+
+<script>
+    
+let lastScrollTop = 0; // To keep track of last scroll position
+const header = document.getElementById('header'); // Get the header element
+const blurThreshold = 200; // Distance (in px) after which the blur effect starts
+
+window.addEventListener('scroll', function() {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  // If we've scrolled more than blurThreshold (200px), apply the blur effect and hide the header
+  if (currentScroll > blurThreshold) {
+    const scrollDistance = currentScroll - blurThreshold;
+    
+    // Calculate how much blur and hiding to apply based on scroll distance
+    let blurAmount = Math.min(scrollDistance / 100, 5); // Max blur of 5px
+    let topPosition = Math.min(scrollDistance / 2, 60); // Hide the header up to 60px (adjust as needed)
+
+    // Apply blur and top position to header
+    header.style.top = `-${topPosition}px`;
+    header.style.filter = `blur(${blurAmount}px)`;
+  } else {
+    // If we're less than 200px down, show the header fully without blur
+    header.style.top = '0';
+    header.style.filter = 'blur(0)';
+  }
+
+  // Update the last scroll position
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+</script>
+
+    <div id="footer"></div>
+    
+</body>
