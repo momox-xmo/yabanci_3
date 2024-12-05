@@ -182,12 +182,6 @@ document.addEventListener('DOMContentLoaded', function() {
 .catch(error => console.error('Error fetching header:', error));
 
 
-
-
-
-    
-
-
     //FETCH FOOTER
     fetch('footer.html')
     .then(response => response.text())
@@ -197,10 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
     });       
 
-
-    
-
-        
+       
     const MIN_DELAY = 2000;    
     const MAX_DELAY = 40000;    
     const MIN_INTERVAL = 20000; 
