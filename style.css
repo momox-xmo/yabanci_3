@@ -316,34 +316,26 @@ footer div a:hover{
 @media  {
 
 .box_container {
-/* max-width: 600px; */
 width: 100%;
 margin:8rem auto;
 padding-inline:0.5rem;
 display: flex;
 flex-direction: column;
 gap: 8rem;
-
-/* border: 1px solid rgb(7, 255, 185); */
 }
-.content_box{
 
+.content_box{
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
-gap: rem;
 padding: 0.1rem;
 margin-bottom: 4rem;
 gap: 1rem;
-/* border: 1px solid rgb(244, 255, 32);     */
 }
 .content_img {  
-    /* width: 100%; */
   width: 35rem; 
   max-width: 1000px;
   height: auto;      
   max-height: 80vh; 
-  /* overflow: hidden;   */
-  /* border: 0.4px solid rgb(119, 0, 255); */
 }
 .content_img img,
 .content_img video{
@@ -401,6 +393,9 @@ gap: 1rem;
     margin-top: 2rem;
     margin-bottom: 3rem;
     /* border: 0.4px solid red; */
+}
+video[poster]{
+    object-fit: cover;
 }
 .video video{
     /* padding-inline: 1rem; */
@@ -586,47 +581,54 @@ gap: 1rem;
 
 
 @media (max-width:765px) {
+body{
+overflow-x: hidden;
+}
+
+html{
+overflow-x: hidden;
+}
 
 .box_container{
 display: flex;
 width: 100%;
+margin: 0;
 margin-top:5rem;
 gap: 1rem;
+padding: 0;
+
 }
 
 
 .content_box{
-margin-top: 0;
 display: flex;
 flex-direction: column;
-/* padding-inline: 1rem; */
-/* padding: 1rem; */
+align-self: center;
+width: 90%;
+padding: 1rem;
 }
 
 .content_img {
 width: 100%;
-
 }
-
-.content_img {
+.content_img img,
+.content_img video {
 width: 100%;
+
+
 }
 
-.empty{
-    /* border: 1px solid rgb(0, 255, 115); */
-    display: none;
+.empty{   
+    display: block;
 }
 
 .description {
-/* padding-inline: 1rem; */
 position: relative;
 margin-left: 0;
 margin-right: auto;
 width:100%;
 font-size: 12px;
 color: black;
-/* left: 0; */
-/* border: 1px solid blue; */
 }
     
 br{
@@ -659,9 +661,15 @@ margin: 0rem auto;
 
 @media (max-width:600px){
 
+    body {
+        width: 100%;
+    }
+
+
 #header{
 
     margin: 0;
+
 }
 
 .header{
@@ -692,13 +700,13 @@ z-index: 9999;
 
 
 .video_container{
-padding-inline: 0rem;
+padding-inline: 1rem;
 padding-top: 2rem;
 }
 
 body.active {
     height: 100%;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 body.active #menu{    
@@ -775,8 +783,6 @@ padding-bottom: 2rem;
 
 #yab_logo{
 max-width: 13rem;
-/* width: 50%; */
-/* width: 7rem; */
 padding-bottom: 0.3rem;
 }
 
